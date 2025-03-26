@@ -153,4 +153,51 @@ public class Main {
 
 ------------------------------------------------------------------------
 
+public class Pagamento {
+
+
+    public void realizarPagamento() {
+        System.out.println("Realizando Pagamento");
+
+
+    }
+}
+
+-------------------------------------------------------------------------
+
+public class PagamentoCartao extends Pagamento {
+
+    @Override
+    public void realizarPagamento() {
+        System.out.println("Pagamento com cartão aprovado!");
+    }
+}
+
+------------------------------------------------------------------------
+public class PagamentoDinheiro extends Pagamento{
+
+    @Override
+    public void realizarPagamento() {
+        System.out.println("Pagamento em dinheiro recebido!");
+    }
+}
+
+------------------------------------------------------------------------
+
+public class Main {
+    public static void main(String[] args) {
+
+        Pagamento[] pagamentos = new Pagamento[2];
+
+
+        pagamentos[0] = new PagamentoCartao();
+        pagamentos[1] = new PagamentoDinheiro();
+
+
+        for (Pagamento pagamento : pagamentos) {
+            pagamento.realizarPagamento();
+        }
+    }
+}
+----------------------------------------------------------------------
 
